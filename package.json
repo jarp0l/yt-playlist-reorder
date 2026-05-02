@@ -1,0 +1,16 @@
+{
+  "name": "yt-playlist-reorder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reorder.js",
+  "scripts": {
+    "start": "node reorder.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "playwright": "^1.0.0"
+  },
+  "packageManager": "pnpm@10.32.1"
+}

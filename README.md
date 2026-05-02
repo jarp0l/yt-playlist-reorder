@@ -15,14 +15,15 @@ pnpm install
 Open your YouTube playlist, open DevTools console, and run:
 
 ```js
-const data = [...document.querySelectorAll('ytd-playlist-video-renderer')]
-  .map(el => {
-    const a = el.querySelector('#video-title');
+const data = [...document.querySelectorAll("ytd-playlist-video-renderer")].map(
+  (el) => {
+    const a = el.querySelector("#video-title");
     const title = a?.textContent.trim();
-    const href = a?.href || '';
-    const id = new URL(href).searchParams.get('v');
+    const href = a?.href || "";
+    const id = new URL(href).searchParams.get("v");
     return { title, id };
-  });
+  },
+);
 
 copy(JSON.stringify(data, null, 2));
 ```
@@ -32,10 +33,7 @@ This copies the list to your clipboard. Paste it into `playlist.json`.
 **Format:**
 
 ```json
-[
-  { "title": "Video title", "id": "VIDEO_ID" },
-  { "id": "VIDEO_ID_NO_TITLE" }
-]
+[{ "title": "Video title", "id": "VIDEO_ID" }, { "id": "VIDEO_ID_NO_TITLE" }]
 ```
 
 `title` is optional — only `id` is used for reordering. Reorder the entries in `playlist.json` however you like before running the script.
@@ -49,6 +47,8 @@ This copies the list to your clipboard. Paste it into `playlist.json`.
 ```
 
 Log in to YouTube and open your playlist tab. Keep it open.
+
+Verify remote debugging is running by opening `http://localhost:9222/json/version` - you should see a JSON response with browser metadata. If it fails, the browser isn't ready yet.
 
 ### 3. Run
 

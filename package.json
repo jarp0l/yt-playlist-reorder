@@ -4,6 +4,8 @@
   "description": "",
   "main": "reorder.js",
   "scripts": {
+    "browser": "'/Applications/Brave Browser.app/Contents/MacOS/Brave Browser' --remote-debugging-port=9222 --user-data-dir=/tmp/brave-debug >/dev/null 2>&1 &",
+    "browser:kill": "pkill -f /tmp/brave-debug",
     "start": "node reorder.js"
   },
   "keywords": [],
